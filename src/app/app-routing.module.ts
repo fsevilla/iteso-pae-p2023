@@ -6,11 +6,14 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { TareasComponent } from './pages/tareas/tareas.component';
 import { DetalleTareaComponent } from './pages/detalle-tarea/detalle-tarea.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'tareas', component: TareasComponent},
-  { path: 'tareas/:id', component: DetalleTareaComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard], data: {
+    role: 'usuario'
+  } },
+  { path: 'tareas', component: TareasComponent, canActivate: [AuthGuard]},
+  { path: 'tareas/:id', component: DetalleTareaComponent, canActivate: [AuthGuard] },
   { path: 'registro', component: RegistroComponent },
   { path: 'login', component: LoginComponent }
 ];
