@@ -1,0 +1,3 @@
+<h2>Lista de Tareas</h2>
+Tarea seleccionada: {{ tarea.title || 'ninguna' }}
+<app-lista [items]="tareas" (onSelected)="setTarea($event)"></app-lista>

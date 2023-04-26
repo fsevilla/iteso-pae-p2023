@@ -1,0 +1,16 @@
+<form (submit)="filtrar()">
+    <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input matInput name="buscar" type="text" placeholder="Buscar..." [(ngModel)]="buscar"> 
+        <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button mat-mini-fab color="primary">
+        <mat-icon>search</mat-icon>
+    </button>
+</form>
+
+<ul>
+    <li *ngFor="let item of itemsFiltrados">
+        <a (click)="seleccionar(item)" [routerLink]="item.id">{{item.title}}</a>
+    </li>
+</ul>

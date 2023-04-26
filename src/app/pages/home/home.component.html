@@ -1,0 +1,10 @@
+<app-home-banner></app-home-banner>
+
+<p *ngIf="cargando">Cargando...</p>
+
+<ul>   
+    <li *ngFor="let item of tareas">
+        {{item.titulo}}
+    </li>
+</ul>
+

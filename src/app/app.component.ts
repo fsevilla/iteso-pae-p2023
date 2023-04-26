@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tareas-ui';
+  nombre: string = 'Francisco';
+
+  constructor() {
+    setTimeout(() => {
+      this.nombre = 'Juan';
+    }, 3000);
+  }
 }

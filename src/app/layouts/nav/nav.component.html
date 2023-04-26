@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+    <mat-icon>star</mat-icon>
+    <span>My App</span>
+    <!-- <span>Tarea: {{tarea.title}}</span> -->
+        <a routerLink="/login" *ngIf="!logueado">Iniciar sesion</a>
+    <a (click)="cerrarSesion()" *ngIf="logueado">Cerrar sesion</a>
+</mat-toolbar>

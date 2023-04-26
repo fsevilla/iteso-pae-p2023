@@ -1,0 +1,26 @@
+<div class="content">
+    <form [formGroup]="formRegistro">
+        <div>
+            <span>Nombre</span>
+            <input type="text" formControlName="nombre">
+        </div>
+        <div>
+            <span>Email</span>
+            <input type="email" formControlName="email">
+        </div>
+        <div>
+            <span>Password</span>
+            <input type="password" formControlName="password">
+        </div>
+        <div>
+            <span>Confirm Password:</span>
+            <input type="password" formControlName="confirm">
+        </div>
+        <div>
+            <input type="checkbox" formControlName="aceptar"> Acepto los terminos y condiciones
+        </div>
+        <div>
+            <button [disabled]="formRegistro.invalid">Crear usuario</button>
+        </div>
+    </form>
+</div>
