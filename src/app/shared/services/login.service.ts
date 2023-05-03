@@ -14,4 +14,9 @@ export class LoginService {
   login(credenciales: Credenciales): Observable<any> {
     return this.httpClient.post('http://localhost:3000/login', credenciales);
   }
+
+  googleLogin(idToken: string): Observable<any> {
+    const url = 'http://localhost:3000/login/google';
+    return this.httpClient.post(url, { googleToken: idToken})
+  }
 }
